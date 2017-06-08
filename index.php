@@ -11,9 +11,9 @@ and open the template in the editor.
         <title></title>
     </head>
     <body>
-        <form>
-            <input type="text" name="nomusuario" id="nomusuario">
-            <input type="password" name="clave" id="clave">
+        <form id="frmusuario">
+            <div><label>Usuario:</label><input type="text" name="nomusuario" id="nomusuario"></div>
+            <div><label>Clave:</label><input type="password" name="clave" id="clave"></div>
             <input id="enviar" type="button" onclick="" value="enviar">
             
             
@@ -23,8 +23,16 @@ and open the template in the editor.
     <script>
         $(document).ready(function(){
     $("#enviar").click(function(){
-        $("form").hide();
-        alert("cuidao todo cambio que hagas se va a ir a la concha de la madre");
+        /*$("form").hide();
+        alert("cuidao todo cambio que hagas se va a ir \n\
+              a la concha de la madre " + $("#nomusuario").val()); */
+        if($("#nomusuario").val()!="" && $("#clave").val()!=""){
+            $("#frmusuario").submit();
+            
+        }
+        else{
+            alert("coloca las weas bien charchazo");
+        }
     }); 
    });
    </script>
