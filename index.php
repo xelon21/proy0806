@@ -15,7 +15,8 @@ and open the template in the editor.
             <div><label>Usuario:</label><input type="text" name="nomusuario" id="nomusuario"></div>
             <div><label>Clave:</label><input type="password" name="clave" id="clave"></div>
             <input id="enviar" type="button" onclick="" value="enviar">
-            
+            <div id="mensaje"></div>
+                
             
         </form>
         
@@ -27,9 +28,14 @@ and open the template in the editor.
         alert("cuidao todo cambio que hagas se va a ir \n\
               a la concha de la madre " + $("#nomusuario").val()); */
         if($("#nomusuario").val()!="" && $("#clave").val()!=""){
-            $("#frmusuario").submit();
-            
-        }
+           /* $("#frmusuario").submit();*/
+            $.ajax({url:"controlador/validarUsuario.php"
+                ,type:'post'
+                ,data:{'nomusuario':$("#nomusuario").val(),'clave':$("#clave").val()}
+                ,success:function(resultado){
+                    $("#mensaje").html(resultado);
+                }});        
+          }
         else{
             alert("coloca las weas bien charchazo");
         }
