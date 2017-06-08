@@ -13,7 +13,7 @@ and open the template in the editor.
     <body>
         <form>
             <input type="text" name="nomusuario" id="nomusuario">
-            <input type="text" name="clave" id="clave">
+            <input type="password" name="clave" id="clave">
             <input id="enviar" type="button" onclick="" value="enviar">
             
             
@@ -22,8 +22,9 @@ and open the template in the editor.
     </body>
     <script>
         $(document).ready(function(){
-    $("p").click(function(){
-        $(this).hide();
+    $("#enviar").click(function(){
+        $("form").hide();
+        alert("cuidao todo cambio que hagas se va a ir a la concha de la madre");
     }); 
    });
    </script>
